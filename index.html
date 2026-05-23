@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dr. Ashish Mishra - Postdoctoral Fellow at Technion working on urban climate, nature-based solutions, remote sensing, GIS, stormwater, air pollution, and human well-being." />
+  <meta name="author" content="Dr. Ashish Mishra" />
+  <title>Dr. Ashish Mishra | Postdoctoral Fellow</title>
+
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --surface: #ffffff;
+      --ink: #121a2b;
+      --muted: #546074;
+      --soft: #778195;
+      --line: #e3ded2;
+      --green: #087a55;
+      --green-dark: #075a40;
+      --green-light: #e8f4ee;
+      --blue-light: #eef8fb;
+      --gold: #b88928;
+      --charcoal: #111827;
+      --shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    p { color: var(--muted); }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.93);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { font-weight: 800; letter-spacing: -0.03em; color: var(--charcoal); }
+    .brand span { color: var(--green); }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--green-dark); }
+
+    .hero {
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 14% 10%, rgba(8,122,85,0.14), transparent 32%),
+        radial-gradient(circle at 90% 15%, rgba(60,160,190,0.18), transparent 35%),
+        linear-gradient(135deg, #ffffff 0%, #f5fbf7 58%, #eef8fb 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.14fr 0.86fr;
+      gap: 56px;
+      align-items: center;
+      padding: 76px 0;
+    }
+    .kicker {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    h1 {
+      color: var(--charcoal);
+      font-size: clamp(2.8rem, 7.2vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      max-width: 820px;
+    }
+    .subtitle {
+      margin-top: 22px;
+      font-size: 1.34rem;
+      color: #2b3548;
+      font-weight: 650;
+    }
+    .hero-copy {
+      margin-top: 24px;
+      max-width: 720px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+    .quick-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+    .quick-tags span {
+      border: 1px solid rgba(8,122,85,0.18);
+      background: rgba(255,255,255,0.64);
+      color: var(--green-dark);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 999px;
+      padding: 0 18px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .button.primary {
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 12px 25px rgba(8,122,85,0.22);
+    }
+    .button.primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .button.secondary {
+      background: #fff;
+      border-color: #d4d8df;
+      color: #1d283b;
+    }
+    .button.secondary:hover {
+      border-color: var(--green);
+      color: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .profile-card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(228,224,214,0.95);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .portrait {
+      min-height: 470px;
+      border-radius: 23px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbe7e1, #eef8f4);
+    }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      min-height: 470px;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    section { padding: 72px 0; }
+    .section-grid {
+      display: grid;
+      grid-template-columns: 0.34fr 0.66fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .section-label {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      font-weight: 900;
+      margin-top: 10px;
+    }
+    h2 {
+      color: var(--charcoal);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+    }
+    h3 {
+      font-size: 1.08rem;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+    }
+    .lead-text {
+      font-size: 1.07rem;
+      margin-bottom: 18px;
+    }
+    .white-band {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 38px;
+    }
+    .research-card, .compact-card, .publication, .info-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px rgba(17,24,39,0.045);
+    }
+    .research-card, .compact-card {
+      padding: 25px;
+    }
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green-light);
+      color: var(--green-dark);
+      margin-bottom: 16px;
+      font-size: 1.26rem;
+    }
+    .research-card p, .compact-card p { margin-top: 10px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .stat {
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      padding: 18px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.65rem;
+      color: var(--green-dark);
+      letter-spacing: -0.04em;
+    }
+    .stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .project {
+      background: var(--charcoal);
+      color: #fff;
+      border-radius: var(--radius-xl);
+      padding: clamp(30px, 5vw, 48px);
+      box-shadow: var(--shadow);
+    }
+    .project h2 { color: #fff; }
+    .project p {
+      color: #d7deea;
+      max-width: 920px;
+      font-size: 1.06rem;
+    }
+    .project .kicker { color: #8ce6bb; margin-bottom: 12px; }
+
+    .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .pill {
+      background: var(--green-light);
+      color: var(--green-dark);
+      border: 1px solid #c6e4d5;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 26px;
+    }
+    .publication {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      padding: 18px 20px;
+      align-items: start;
+    }
+    .publication p { color: #263247; }
+    .pub-year {
+      border-radius: 999px;
+      border: 1px solid #d9d5cc;
+      padding: 7px 10px;
+      text-align: center;
+      color: var(--green-dark);
+      font-weight: 900;
+      font-size: 0.87rem;
+      background: #fbfaf7;
+    }
+    .pub-journal {
+      margin-top: 5px;
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+    .doi-link {
+      display: inline-flex;
+      margin-top: 8px;
+      color: var(--green-dark);
+      font-weight: 850;
+      font-size: 0.92rem;
+    }
+    .doi-link:hover { text-decoration: underline; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+    .info-card {
+      padding: 28px;
+    }
+    .clean-list {
+      list-style: none;
+      margin-top: 22px;
+      display: grid;
+      gap: 13px;
+      color: var(--muted);
+    }
+    .clean-list li {
+      padding-left: 18px;
+      position: relative;
+    }
+    .clean-list li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+    }
+    .timeline {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .timeline-item {
+      border-left: 3px solid var(--green);
+      padding: 5px 0 5px 18px;
+    }
+    .timeline-item strong {
+      color: var(--charcoal);
+      display: block;
+    }
+    .timeline-item span {
+      color: var(--muted);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--muted);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .contact-links a:hover { color: var(--green-dark); }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .small-note {
+      margin-top: 16px;
+      font-size: 0.92rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 900px) {
+      .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      .hero-grid, .section-grid, .two-col, .three-col { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid { padding: 54px 0; gap: 32px; }
+      .portrait, .portrait img { min-height: 360px; }
+      .card-grid { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+    }
+    @media (max-width: 560px) {
+      .stats { grid-template-columns: 1fr; }
+      .publication { grid-template-columns: 1fr; }
+      .pub-year { width: max-content; }
+      .container { width: min(var(--max), calc(100% - 28px)); }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#">Ashish <span>Mishra</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#bio">Biography</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">Urban Climate • Nature-Based Solutions • Geospatial Analytics</p>
+          <h1>Dr. Ashish Mishra</h1>
+          <p class="subtitle">Postdoctoral Fellow | Lady Davis Postdoctoral Fellow</p>
+          <p class="hero-copy">
+            Developing geospatial and data-driven solutions for sustainable, climate-resilient, and nature-positive cities.
+          </p>
+          <div class="quick-tags">
+            <span>Remote Sensing</span>
+            <span>GIS</span>
+            <span>Urban Heat</span>
+            <span>Stormwater</span>
+            <span>Air Pollution</span>
+            <span>Human Well-being</span>
+          </div>
+          <div class="button-row">
+            <a class="button primary" href="mailto:ashishmishra@campus.technion.ac.il">Email</a>
+            <a class="button secondary" href="https://ash-iit.github.io/CV_Ashish_Mishra.pdf" target="_blank" rel="noopener">CV</a>
+            <a class="button secondary" href="https://scholar.google.com/citations?hl=en&user=t2XaHZ8AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="button secondary" href="https://orcid.org/0000-0002-4510-7990" target="_blank" rel="noopener">ORCID</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/dr-ashish-mishra-7a66a57a/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Profile photograph">
+          <div class="portrait">
+            <img src="ProfilePhoto.jpg" alt="Portrait of Dr. Ashish Mishra" />
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="bio">
+      <div class="container section-grid">
+        <div>
+          <h2>Biography</h2>
+          <p class="section-label">Academic profile</p>
+        </div>
+        <div>
+          <p class="lead-text">
+            Dr. Ashish Mishra is a Postdoctoral Fellow in the Human and Biodiversity Research Lab at the Technion – Israel Institute of Technology and a recipient of the Lady Davis Postdoctoral Fellowship. He holds Bachelor’s and Master’s degrees in Civil Engineering and earned his Ph.D. in Hydrology from the Indian Institute of Technology Roorkee, India.
+          </p>
+          <p class="lead-text">
+            His research integrates remote sensing, GIS, spatial modelling, and environmental analytics to understand urban environmental systems and support evidence-based planning. His work spans urban climate, nature-based solutions, stormwater management, air pollution, and human well-being, with a particular focus on developing decision-support tools for sustainable and climate-resilient cities.
+          </p>
+          <div class="stats">
+            <div class="stat"><strong>9</strong><span>Peer-reviewed journal publications</span></div>
+            <div class="stat"><strong>4+</strong><span>Research and consultancy projects</span></div>
+            <div class="stat"><strong>8</strong><span>Professional memberships</span></div>
+            <div class="stat"><strong>2026</strong><span>Lady Davis Postdoctoral Fellow</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="white-band">
+      <div class="container">
+        <div class="section-grid">
+          <div>
+            <h2>Research area</h2>
+            <p class="section-label">Urban systems and NbS</p>
+          </div>
+          <div>
+            <p class="lead-text">
+              Ashish’s research focuses on understanding how cities can become more sustainable, climate-resilient, and healthier through data-driven planning approaches. His current work investigates how nature-based solutions can address multiple urban challenges simultaneously, including urban heat, stormwater runoff, air pollution, biodiversity conservation, and human well-being.
+            </p>
+            <p class="lead-text">
+              By integrating remote sensing, GIS, environmental modelling, and spatial decision-support methods, his research seeks to identify where and how nature-based interventions can maximize environmental and societal benefits. The overarching goal is to support evidence-based urban planning and climate adaptation strategies in rapidly urbanizing regions worldwide.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <article class="research-card">
+            <div class="icon">☀</div>
+            <h3>Urban Climate and Heat Mitigation</h3>
+            <p>Urban heat island dynamics, microclimate assessment, thermal exposure, and climate-responsive urban planning.</p>
+          </article>
+          <article class="research-card">
+            <div class="icon">🌿</div>
+            <h3>Nature-Based Solutions</h3>
+            <p>Spatial evaluation of green infrastructure and NbS for cooling, biodiversity, health, and urban resilience.</p>
+          </article>
+          <article class="research-card">
+            <div class="icon">💧</div>
+            <h3>Stormwater and Urban Hydrology</h3>
+            <p>Stormwater runoff, urban drainage, flood-sensitive planning, and hydrological benefits of green infrastructure.</p>
+          </article>
+          <article class="research-card">
+            <div class="icon">◌</div>
+            <h3>Air Pollution and Well-being</h3>
+            <p>Integration of air pollution, environmental exposure, and human well-being into urban decision-support frameworks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="container">
+        <div class="project">
+          <p class="kicker">Current project</p>
+          <h2>Integrated Spatial Framework for Nature-Based Solutions in Cities</h2>
+          <p style="margin-top: 22px;">
+            My current postdoctoral research develops an integrated framework for evaluating and optimizing nature-based solutions across multiple urban environmental dimensions. The framework links urban heat mitigation, stormwater runoff reduction, air quality improvement, biodiversity enhancement, and human well-being outcomes using geospatial data, environmental modelling, and spatial prioritization approaches. The research aims to support evidence-based urban planning by identifying where nature-based interventions can deliver the greatest ecological and societal benefits.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-band">
+      <div class="container section-grid">
+        <div>
+          <h2>Methods and tools</h2>
+          <p class="section-label">Technical expertise</p>
+        </div>
+        <div>
+          <p class="lead-text">
+            My work integrates geospatial, environmental, hydrological, and modelling approaches to translate urban data into planning-relevant evidence.
+          </p>
+          <div class="tool-list">
+            <span class="pill">Remote sensing</span>
+            <span class="pill">GIS</span>
+            <span class="pill">Spatial modelling</span>
+            <span class="pill">Google Earth Engine</span>
+            <span class="pill">Python geospatial workflows</span>
+            <span class="pill">Urban microclimate analysis</span>
+            <span class="pill">Hydrological modelling</span>
+            <span class="pill">Machine learning</span>
+            <span class="pill">Decision-support tools</span>
+            <span class="pill">Climate adaptation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container section-grid">
+        <div>
+          <h2>Selected publications</h2>
+          <p class="section-label">Research outputs</p>
+        </div>
+        <div>
+          <p class="lead-text">
+            Peer-reviewed journal publications across urban climate, remote sensing, hydrology, sustainability, and science-policy interfaces. A complete and updated list is available on Google Scholar.
+          </p>
+          <div class="publication-list">
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <p><strong>Mishra, A., & Arya, D. S. (2023).</strong> Assessment of land-use land-cover dynamics and urban heat island effect of Dehradun city, North India: a remote sensing approach.</p>
+                <p class="pub-journal">Environment, Development and Sustainability, 26(9), 22421–22447</p>
+                <a class="doi-link" href="https://doi.org/10.1007/s10668-023-03558-6" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2024</div>
+              <div>
+                <p><strong>Mishra, A., & Arya, D. S. (2024).</strong> Land Surface Temperature Dynamics during COVID-19 Lockdown in Diverse Climatic and Physiographic Zones—A Study of Indian Mega Cities.</p>
+                <p class="pub-journal">Transactions in GIS, 28(7), 2295–2308</p>
+                <a class="doi-link" href="https://doi.org/10.1111/tgis.13237" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2025</div>
+              <div>
+                <p><strong>Pushkar, D. S., Mishra, A., Arya, D. S., Jaiswal, S., & Kumar, A. (2025).</strong> Investigating the effects of land use, land cover change, and urban heat island effects in Agra city, India, using a remote sensing approach.</p>
+                <p class="pub-journal">Discover Cities, 2, 105</p>
+                <a class="doi-link" href="https://doi.org/10.1007/s44327-025-00149-0" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2025</div>
+              <div>
+                <p><strong>Jubaed, A., & Mishra, A. (2025).</strong> Analysing Land Use and Land Cover Dynamics (1972–2020) and Evaluating Drainage System Efficacy: A Case Study of Bangladesh Polders.</p>
+                <p class="pub-journal">Irrigation and Drainage</p>
+                <a class="doi-link" href="https://doi.org/10.1002/ird.3072" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <p><strong>Ahmad, E., Al-Dousari, Mishra, A., & Singh, S. (2023).</strong> Land use land cover change detection and urban sprawl prediction for Kuwait metropolitan region using multi-layer perceptron neural networks (MLPNN).</p>
+                <p class="pub-journal">The Egyptian Journal of Remote Sensing & Space Sciences</p>
+                <a class="doi-link" href="https://doi.org/10.1016/j.ejrs.2023.05.003" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2024</div>
+              <div>
+                <p><strong>Leal Filho, W., Dibbern, T. A., Pimenta, M. A., Cristofoletti, E., Mbah, M., Mishra, A., Clarke, A., Samuel, N., Apraiz, J. C., Abubakar, I. R., & Aina, Y. A. (2024).</strong> The added value of partnerships in implementing the UN Sustainable Development Goals.</p>
+                <p class="pub-journal">Journal of Cleaner Production</p>
+                <a class="doi-link" href="https://doi.org/10.1016/j.jclepro.2024.140794" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2024</div>
+              <div>
+                <p><strong>Leal Filho, W., Mbah, M. F., Dinis, M. A. P., Trevisan, L. V., Lange, D. de, Mishra, A., Rebelatto, B., Hassen, T. Ben, & Aina, Y. A. (2024).</strong> The role of artificial intelligence in the implementation of the UN Sustainable Development Goal 11: Fostering sustainable cities and communities.</p>
+                <p class="pub-journal">Cities, 150</p>
+                <a class="doi-link" href="https://doi.org/10.1016/j.cities.2024.105021" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2024</div>
+              <div>
+                <p><strong>Arheimer, B., Cudennec, C., Castellarin, A., Grimaldi, S., Heal, K. V., Lupton, C., et al., & Mishra, A. (2024).</strong> The IAHS Science for Solutions decade with Hydrology Engaging Local People IN a Global world (HELPING).</p>
+                <p class="pub-journal">Hydrological Sciences Journal</p>
+                <a class="doi-link" href="https://doi.org/10.1080/02626667.2024.2355202" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2026</div>
+              <div>
+                <p><strong>Orieschnig, C., Adla, S., Chun, K. P., Srivastava, S., Morovati, K., Howard, B. C., Octavianti, T., Uchôa, J. G., Duan, Z., Mazzoglio, P., Panchanathan, A., Koren, G., Papacharalampous, G. A., Pradhananga, D., Soulis, K., Choukrani, H., Dakhlaoui, H., Elçi, A., Fan, X., et al. (2026).</strong> Effective science communication in the face of water crises: a community perspective on challenges and best practice in HELPING.</p>
+                <p class="pub-journal">Hydrological Sciences Journal, 1–18</p>
+                <a class="doi-link" href="https://doi.org/10.1080/02626667.2026.2625282" target="_blank" rel="noopener">DOI ↗</a>
+              </div>
+            </article>
+          </div>
+          <a class="button secondary" style="margin-top: 24px;" href="https://scholar.google.com/citations?hl=en&user=t2XaHZ8AAAAJ" target="_blank" rel="noopener">
+            View full publication list
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="white-band">
+      <div class="container section-grid">
+        <div>
+          <h2>Research and consultancy projects</h2>
+          <p class="section-label">Applied experience</p>
+        </div>
+        <div>
+          <p class="lead-text">
+            Experience across climate-sensitive urban planning, stormwater management, hydrological studies, remote sensing training, and geospatial risk assessment.
+          </p>
+          <div class="publication-list">
+            <article class="compact-card">
+              <h3>Impact of Climate Change on Urban Heat Island and Urban Microclimate</h3>
+              <p>Sponsored by the Department of Science and Technology (DST), Government of India.</p>
+            </article>
+            <article class="compact-card">
+              <h3>Comprehensive Stormwater Management Plan for Bhubaneswar City, Odisha</h3>
+              <p>Project Fellow at IIT Roorkee; sponsored by Bhubaneswar Municipal Corporation, Odisha, India.</p>
+            </article>
+            <article class="compact-card">
+              <h3>Remote Sensing–GIS Course Module Development</h3>
+              <p>Funded by the World Meteorological Organization (WMO).</p>
+            </article>
+            <article class="compact-card">
+              <h3>Landslide Susceptibility Mapping</h3>
+              <p>Consultancy project for an insurance firm, focused on Uttarakhand and Himachal Pradesh, India.</p>
+            </article>
+            <article class="compact-card">
+              <h3>Hydrological Study for the Proposed Rail-fed Depot of HPCL at UNA, Himachal Pradesh</h3>
+              <p>Hydrological assessment and planning support for infrastructure development.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="container section-grid">
+        <div>
+          <h2>Awards and fellowships</h2>
+          <p class="section-label">Recognition</p>
+        </div>
+        <div class="info-card">
+          <ul class="clean-list">
+<li>Seal of Excellence – The Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowship | 2026</li>
+<li>Lady Davis Post-Doctoral Fellowship, Technion – Israel Institute of Technology, Haifa, Israel | 2026</li>
+<li>Sivapalan Young Scientist Travel Award (SYSTA) | 2023</li>
+<li>Volkswagen Foundation Research Grant | 2023</li>
+<li>Global Research Collaborative Grant by British Council | 2022</li>
+<li>Ministry of Education Fellowship, Government of India, for Postgraduate and Doctoral Programmes | 2015 and 2019</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-band">
+      <div class="container section-grid">
+        <div>
+          <h2>Memberships and affiliations</h2>
+          <p class="section-label">Professional networks</p>
+        </div>
+        <div class="info-card">
+          <ul class="clean-list">
+<li>Associate Member, American Society of Civil Engineers (ASCE), USA</li>
+<li>Member, International Association for Urban Climate (IAUC) | 2023–2026</li>
+<li>General Member, Future Earth, European Space Agency (ESA)</li>
+<li>Member, International Society for Photogrammetry and Remote Sensing (ISPRS)</li>
+<li>Member, Working Group, International Association of Hydrological Sciences (IAHS)</li>
+<li>Committee Member, Inspire, Develop, Empower, and Advance (IDEA), IEEE GRSS</li>
+<li>Technical Member, Earth Science Informatics (ESI) Technical Committee, IEEE</li>
+<li>Member, Indo-UK Water Centre (IUWC)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container two-col">
+        <div class="info-card">
+          <h2>Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>Ph.D. in Hydrology</strong>
+              <span>Indian Institute of Technology Roorkee, India | 2025</span>
+              <span>Dissertation: Impact of Urban Heat Islands on Microclimate of a Sub-Tropical City</span>
+            </div>
+            <div class="timeline-item">
+              <strong>M.Tech. in Water Resources</strong>
+              <span>Delhi Technological University, India | 2017</span>
+            </div>
+            <div class="timeline-item">
+              <strong>B.Tech. in Civil Engineering</strong>
+              <span>Uttar Pradesh Technical University, Lucknow, India | 2014</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h2>Contact and links</h2>
+          <div class="contact-links">
+            <a href="mailto:ashishmishra@campus.technion.ac.il">Email <span>↗</span></a>
+            <a href="https://ash-iit.github.io/CV_Ashish_Mishra.pdf" target="_blank" rel="noopener">CV <span>↗</span></a>
+            <a href="https://scholar.google.com/citations?hl=en&user=t2XaHZ8AAAAJ" target="_blank" rel="noopener">Google Scholar <span>↗</span></a>
+            <a href="https://orcid.org/0000-0002-4510-7990" target="_blank" rel="noopener">ORCID <span>↗</span></a>
+            <a href="https://www.researchgate.net/profile/Ashish-Mishra-33" target="_blank" rel="noopener">ResearchGate <span>↗</span></a>
+            <a href="https://www.linkedin.com/in/dr-ashish-mishra-7a66a57a/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+            <a href="https://shwartzlab.net.technion.ac.il/" target="_blank" rel="noopener">Human and Biodiversity Research Lab <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="project" style="background: #087a55;">
+          <p class="kicker" style="color: #d7ffec;">Collaboration interests</p>
+          <h2>Urban climate, nature-based solutions, and decision-support tools</h2>
+          <p style="margin-top: 22px;">
+            I am interested in collaborations at the intersection of urban climate, geospatial modelling, climate adaptation, nature-based solutions, stormwater-sensitive urban design, and environmental health. I am particularly open to projects that connect Earth observation, spatial analytics, and planning decisions for more resilient cities.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Dr. Ashish Mishra. All rights reserved.</p>
+      <p class="small-note">Static academic webpage for GitHub Pages. Keep <strong>ProfilePhoto.jpg</strong> and <strong>CV_Ashish_Mishra.pdf</strong> in the same folder as index.html.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
